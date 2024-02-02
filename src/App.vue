@@ -8,7 +8,7 @@
                 @click="changeOpen(index)"
             >
                 <h3 v-if="item.open" class="text-white">
-                    {{ item.name }}
+                    {{item.value}}. {{ item.name }}
                 </h3>
                 <h3 v-else class="text-white">Click to open</h3>
             </div>
@@ -20,7 +20,7 @@
 
 <script setup>
 import { ref } from 'vue'
-const stop = ref(false)
+const counter = ref(1)
 const numberFind = ref(0)
 numberFind.value = Math.floor(Math.random() * 8) + 1
 const data = ref([
@@ -102,7 +102,6 @@ const randomName = () => {
 }
 randomName()
 const handleBeforeStart = () => {
-    stop.value = false
     data.value.sort(() => {
         const randomNumber = Math.random() < 0.5 ? -1 : 1
         return randomNumber
@@ -115,8 +114,10 @@ const handleBeforeStart = () => {
     })
 }
 const changeOpen = index => {
-    if (stop.value === true) return
+    if(data.value[index].open === true) return
+
     data.value[index].open = true
-    stop.value = true
+    data.value[index].value = counter.value
+    counter.value++
 }
 </script>
