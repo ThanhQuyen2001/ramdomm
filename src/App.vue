@@ -69,11 +69,6 @@ const data = ref([
         open: false,
         name: '',
     },
-    {
-        value: 10,
-        open: false,
-        name: '',
-    },
 ])
 const names = ref([
     'Nhi',
