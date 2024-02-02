@@ -6,6 +6,8 @@
 .container {
     max-width: 1200px;
     min-width: 960px;
+    padding: 1rem;
+    overflow: hidden;
 }
 .bg-dark {
     background-color: #222222;
@@ -30,7 +32,7 @@
 }
 .card {
     width: 20%;
-    height: 200px;
+    height: 180px;
     border-radius: 20px;
     margin: 0 10px;
     border-radius: 4px solid #fff;
