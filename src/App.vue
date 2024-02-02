@@ -77,13 +77,12 @@ const data = ref([
 ])
 const names = ref([
     'Nhi',
-    'Nhật',
     'Trang',
     'Vui',
     'Quyền',
     'Bửu',
-    'Nhật',
     'Vũ',
+    'Nhật',
     'Thiên',
     'Q.Anh',
 ])
@@ -102,6 +101,7 @@ const randomName = () => {
 }
 randomName()
 const handleBeforeStart = () => {
+    counter.value = 1
     data.value.sort(() => {
         const randomNumber = Math.random() < 0.5 ? -1 : 1
         return randomNumber
